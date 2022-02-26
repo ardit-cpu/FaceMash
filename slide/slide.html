@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FaceMash -- Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="slide.css">
+        
+    <!-- ===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#">FaceMash</a></span>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">FaceMash</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="../profile/profile.php">Profile</a></li>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </div>
+
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<script>
+
+const body = document.querySelector("body"),
+      nav = document.querySelector("nav"),
+      modeToggle = document.querySelector(".dark-light"),
+      searchToggle = document.querySelector(".searchToggle"),
+      sidebarOpen = document.querySelector(".sidebarOpen"),
+      siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+          if(getMode && getMode === "dark-mode"){
+            body.classList.add("dark");
+          }
+
+// js code to toggle dark and light mode
+      modeToggle.addEventListener("click" , () =>{
+        modeToggle.classList.toggle("active");
+        body.classList.toggle("dark");
+
+        // js code to keep user selected mode even page refresh or file reopen
+        if(!body.classList.contains("dark")){
+            localStorage.setItem("mode" , "light-mode");
+        }else{
+            localStorage.setItem("mode" , "dark-mode");
+        }
+      });
+
+// js code to toggle search box
+        searchToggle.addEventListener("click" , () =>{
+        searchToggle.classList.toggle("active");
+      });
+ 
+      
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+    nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+    let clickedElm = e.target;
+
+    if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+        nav.classList.remove("active");
+    }
+});
+
+</script>
+<html>
+    <body>
+        <div class="top-feed">
+            <div class="first-man"><img src="imgs/lh.jpg" alt=""></div>
+            <div class="first-man"><img src="imgs/b4.jpg" alt=""></div>
+            <div class="first-man"><img src="imgs/tg.jpg" alt=""></div>
+            <div class="first-man"><img src="imgs/rs4.jpg" alt=""></div>
+            <div class="first-man"><div class="bl"></div></div>
+           
+          
+        </div>
+        <div class="small-users">
+            <div class="small"><img src="imgs/user.png" alt=""></div>
+            <div class="small"><img src="imgs/user.png" alt=""></div>
+            <div class="small"><img src="imgs/user.png" alt=""></div>
+            <div class="small"><img src="imgs/user.png" alt=""></div>
+        </div>
+        <div class="devider"></div>
+        <div class="middle">
+            <div class="photo-1">
+                <div class="prof"><img style="" src="imgs/stev.png" alt=""><p>Steve Jobs <i style="color: rgb(0, 81, 255);" class="fa fa-check-circle"></i></p> </div>
+                <div class="box">
+                    <img src="imgs/sv.jpg" alt="">
+                    <p>We introduce the new IPhone12 Designed by Steve Jobs
+                        <p style="color: rgb(0, 81, 255); cursor: pointer;">#steve #iphone #new <p style="color: white; cursor: pointer;">@diart_bytyqii</p></p>
+                    </p>
+                </div>
+                <footer><button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-share-alt"></button>
+                <button class="fa fa-send"></button>
+                </footer>
+            </div>
+        </div>
+        <br>
+        <div class="middle">
+            <div class="photo-1">
+                <div class="prof"><img style="" src="imgs/stev.png" alt=""><p>Ardit Berisha <i style="color: rgb(0, 81, 255);" class="fa fa-check-circle"></i></p> </div>
+                <div class="box">
+                    <img src="imgs/wall.jfif" alt="">
+                    <p>cool Photo HUH
+                        <p style="color: rgb(0, 81, 255); cursor: pointer;">#programing #tech<p style="color: white; cursor: pointer;">@microsoft</p></p>
+                    </p>
+                </div>
+                <footer><button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-share-alt"></button>
+                <button class="fa fa-send"></button>
+                </footer>
+            </div>
+        </div>
+        <br>
+        <div class="middle">
+            <div class="photo-1">
+                <div class="prof"><img style="" src="imgs/user.png" alt=""><p>Jeton Mustafa <i style="color: rgb(0, 81, 255);" class="fa fa-check-circle"></i></p> </div>
+                <div class="box">
+                    <img src="imgs/b4.jpg" alt="">
+                    <p>BMW 435i
+                        <p style="color: rgb(0, 81, 255); cursor: pointer;">#bmw #photo #byme #pubg<p style="color: white; cursor: pointer;">@diart_bytyqii @arditber_</p></p>
+                    </p>
+                </div>
+                <footer><button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-share-alt"></button>
+                <button class="fa fa-send"></button>
+                </footer>
+            </div>
+        </div>
+        <br>
+        <div class="middle">
+            <div class="photo-1">
+                <div class="prof"><img style="" src="imgs/rs4.jpg" alt=""><p>Diart Bytyqi <i style="color: rgb(0, 81, 255);" class="fa fa-check-circle"></i></p> </div>
+                <div class="box">
+                    <img src="imgs/rs4.jpg" alt="">
+                    <p> My audi RS4
+                        <p style="color: rgb(0, 81, 255); cursor: pointer;">#audi #rs4 #marakli i  kerev<p style="color: white; cursor: pointer;">@audi @cars</p></p>
+                    </p>
+                </div>
+                <footer><button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-share-alt"></button>
+                <button class="fa fa-send"></button>
+                </footer>
+            </div>
+        </div>
+        <br>
+        <div class="middle">
+            <div class="photo-1">
+                <div class="prof"><img style="" src="imgs/user.png" alt=""><p>Getuar Putin <i style="color: rgba(0, 81, 255, 0);" class="fa fa-check-circle"></i></p> </div>
+                <div class="box">
+                    <img src="imgs/r.jfif" alt="">
+                    <p> I am becoming Hacker MotherFucker,  i know how to reset pc and i hate Ardit🤣
+                        <p style="color: rgb(0, 81, 255); cursor: pointer;">#gey_man #nob_hacker<p style="color: white; cursor: pointer;">@haha</p></p>
+                    </p>
+                </div>
+                <footer><button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-share-alt"></button>
+                <button class="fa fa-send"></button>
+                </footer>
+            </div>
+        </div>
+        <br>
+        <div class="middle">
+            <div class="photo-1">
+                <div class="prof"><img style="" src="imgs/vladi.jpg" alt=""><p>Vladimir Putin <i style="color: rgba(0, 81, 255, 0);" class="fa fa-check-circle"></i></p> </div>
+                <div class="box">
+                    <img src="imgs/vladi.jpg" alt="">
+                    <p> un jam Vladimir Rama Qetnik i klasit tpar ky eshte shoki im Getuar Putin
+                        <p style="color: rgb(0, 81, 255); cursor: pointer;">#imgay<p style="color: white; cursor: pointer;">@getuarrama55</p></p>
+                    </p>
+                </div>
+                <footer><button class="fa fa-thumbs-up"></button>
+                <button class="fa fa-share-alt"></button>
+                <button class="fa fa-send"></button>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
+</body>
+</html>

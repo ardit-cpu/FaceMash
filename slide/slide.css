@@ -1,0 +1,443 @@
+/* ===== Google Font Import - Poppins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease;;
+}
+
+
+/* ===== Colours ===== */
+:root{
+    --body-color: #E4E9F7;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--body-color);
+}
+
+body.dark{
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+}
+
+body.dark nav{
+    border: 1px solid #393838;
+
+}
+
+nav .nav-bar{
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .nav-bar .sidebarOpen{
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+nav .nav-bar .logo a{
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.menu .logo-toggle{
+    display: none;
+}
+
+.nav-bar .nav-links{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav-links li{
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a{
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before{
+    opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox{
+    display: flex;
+    align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    color: rgb(24, 17, 17);
+}
+
+.dark-light i,
+.searchToggle i{
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+}
+
+.dark-light i.sun{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.dark-light.active i.sun{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dark-light.active i.moon{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle i.cancel{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchToggle.active i.cancel{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.searchToggle.active i.search{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.searchBox{
+    position: relative;
+}
+
+.searchBox .search-field{
+    position: absolute;
+    bottom: -85px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.searchToggle.active ~ .search-field{
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-field::before{
+    content: '';
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+}
+
+.search-field input{
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+}
+
+body.dark .search-field input{
+    color: var(--text-color);
+}
+
+.search-field i{
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+body.dark .search-field i{
+    color: var(--text-color);
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        height: 100%;
+        width: 320px;
+        left: -100%;
+        top: 0;
+        padding: 20px;
+        background-color: var(--side-nav);
+        z-index: 100;
+        transition: all 0.4s ease;
+    }
+
+    nav.active .menu{
+        left: -0%;
+    }
+
+    nav.active .nav-bar .navLogo a{
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu .logo-toggle{
+        display: block;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-toggle .siderbarClose{
+        color: var(--text-color);
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .nav-bar .nav-links{
+        flex-direction: column;
+        padding-top: 30px;
+    }
+
+    .nav-links li a{
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+.top-feed{
+    display: flex;
+    justify-content: center;
+}
+.top-feed .first-man{
+    margin-top: 4cm;
+    text-align: center;
+    display: inline-flex;
+}
+.top-feed img{
+    width: 5cm;
+    cursor: pointer;
+    margin-left: 20px;
+    height: 7cm;
+    border-radius: 20px;
+    border: 3px solid #4070F4;
+    transform: 0.5s;
+}
+
+.top-feed img:hover{
+    transform: scale(1.1);
+    backdrop-filter: blur(2px);
+    border-color: #000000;
+}
+
+.small-users{
+    display: inline-flex;
+    display: flex;
+    justify-content: center;
+}
+
+.small-users img{
+    width: 2cm;
+    position: relative;
+    left: -50px;
+    cursor: pointer;
+    top: -3cm;
+    background: #4070F4;
+    border-radius: 50%;
+    margin-left: 130px;
+}
+
+.small-users img:hover{
+    border: 2px solid #18191A;
+    background: #24252600;
+    transform: scale(1.2);
+}
+
+.devider{
+    width: 20cm;
+    height: 5px;
+    border-radius: 20px;
+    border:1px solid #242526;
+    background: gray;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-left: 7cm;
+}
+.middle{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.photo-1{
+    color: #CCC;
+    width: 15cm;
+    height: 15cm;
+    background:#3938384d;
+    border-radius: 20px;
+}
+.prof img{
+    margin-top: 2px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.photo-1 .box img{
+    width: 14.5cm;
+}
+
+.photo-1 footer{
+    position: relative;
+    text-align: center;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 5px;
+    justify-content: center;
+    width: 14.5cm;
+    height: 40px;
+    background: #242526;
+}
+.photo-1 footer button{
+    width: 40px;
+    background: #2d3338;
+    border: thick;
+    margin-left: 20px;
+    height: 40px;
+    color: #ccc;
+    border-radius: 50%;
+    outline: none;
+}
+
+.photo-1 footer button:hover{
+    width: 40px;
+    background: #5f6b7567;
+    border: thick;
+    margin-left: 20px;
+    height: 40px;
+    color: rgb(22, 23, 26);
+    border-radius: 50%;
+    outline: none;
+}
+
+.photo-1 footer button:focus{
+    color: #4070F4;
+}
+.photo-1 footer button:active{
+    color: #4070F4;
+    transform: 0.0s;
+    transform: scale(1.9);
+    box-shadow: 0 0 30px 2px #18191A;
+}
+
+::-webkit-scrollbar{
+    background: #010718;
+    border-radius: 5px;
+    height: 5cm;
+    width: 5px;
+}
+::-webkit-scrollbar-button{
+    background: #2d3338;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #393838;
+    transform: 1s;
+    transition: 1s;
+    height: 5px;
+    width: 2px;
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background: #4070F4;
+    box-shadow: 0 0 10px 5px #4070F4;
+}

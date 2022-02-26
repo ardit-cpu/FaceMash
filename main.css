@@ -1,0 +1,82 @@
+
+html{
+    background: linear-gradient(to left, #244A80,#00917c);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+@media screen and (max-width: 800px)  {
+    html{
+        overflow: hidden;
+    }
+.mid{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    
+}
+.panel{
+    position: relative;
+    top: -2cm;
+    background-color: #244a8071;
+
+}
+.panel input{
+    width: 5cm;
+    height: 10px;
+    font-size: 20px;
+}
+.h{
+    font-size: 10px;
+    visibility: hidden;
+    margin-left: 20cm;
+}
+}
+.mid {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.panel{
+    width: 10cm;
+    height: 15cm;
+    margin-top: 5cm;
+    background: white;    
+    border-radius: 5px;
+  }
+  .panel #line{
+      width: 5cm;
+      border-radius: 30px;
+      height: 5px;
+      background: linear-gradient(to left, #71b7e6, #9b59b6);
+      display: flex;
+      justify-content: center;
+      margin-left: 90px;
+    }
+   .panel input{
+       outline: none;
+       border-top: 0.5px solid #9b59b6;
+       border-bottom: 2px solid #9b59b6;
+       border-left: 0.5px solid #9b59b6;
+       border-right: 0.5px solid #9b59b6;
+       border-radius: 5px;
+       width: 7cm;
+       height: 35px;
+       margin-bottom: 20px;
+   } 
+   .panel button{
+       width: 5cm;
+       height: 40px;
+       border: thick;
+       background: linear-gradient(to left, #9b59b6, #71b7e6);
+       border-radius: 5px;
+       transition: 0.5s;
+   }
+
+   .panel button:hover{
+    background: linear-gradient(to right, #9b59b6, #71b7e6);
+    border-radius: 5px;
+   }
+
+   .h{
+    position: absolute; margin-left: 12.5cm; font-size: 50px;
+   }
